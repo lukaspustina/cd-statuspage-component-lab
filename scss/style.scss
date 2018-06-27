@@ -1,0 +1,204 @@
+@import "compass/css3";
+
+// The CSS for the colored dot that represents your current status
+$red:#e74c3c;
+$orange:#e67e22;
+$yellow:#f1c40f;
+$green:#2ecc71;
+
+.color-dot {
+  @include border-radius(99px);
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin-right:5px;
+  &.critical {
+    background-color:$red;
+  }
+  &.major {
+    background-color:$orange;
+  }
+  &.minor {
+    background-color:$yellow;
+  }
+  &.none {
+    background-color:$green;
+  }
+}
+
+
+
+
+
+
+
+
+// Everything that follows is just general layout styling
+body {
+  background-color:#f8f8f8;
+}
+
+.dropdown-menu .divider { margin:6px 0 }
+
+#custom-header {
+  background-color:#fff;
+  padding:24px 40px 23px;
+  position:relative;
+  border-bottom:1px solid #e0e0e0;
+  .logo-container {
+    float:left;
+    max-width:325px;
+    img {
+		max-width:100%;
+    }
+  }
+  nav {
+    float:right;
+    & > a {
+      margin-right: 30px;
+    }
+    & > a, .show-dropdown {
+      color: #FFF;
+      display:inline-block;
+      font-weight: 500;
+      color: #AFAFAF;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .dropdown {
+      display:inline-block;
+    }
+  }
+  .dropdown-menu {
+    right: 0px;
+    left:auto;
+  }
+
+  @media screen and (min-width: 900px) {
+    nav {
+      position:relative;
+      top:8px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    text-align:center;
+    padding-left:5%;
+    padding-right:5%;
+    padding-bottom:18px;
+    .logo-container {
+      float:none;
+      display:block;
+      margin-bottom:18px;
+      max-width:none;
+      .logo {
+        max-width:325px;
+        display:inline-block;
+      }
+    }  
+    nav {
+      float:none;
+    }
+    nav > a, .updates-dropdown-container {
+      float:none;
+    }
+  }
+
+  @media screen and (max-width: 475px) {
+    nav {
+      & > a {
+        margin-right:20px; 
+      }
+      & > a, .show-updates-dropdown {
+        font-size:13px;
+      }        
+    }
+    .logo-container .logo {
+      max-width:70%; 
+    }
+    nav > a:nth-child(1):before {
+      content:none;
+    }
+  }
+}
+
+.page-content {
+  text-align:center;
+  font-size:30px;
+  color:#d7d7d7;
+  font-weight:500;
+  letter-spacing:2px;
+}
+
+
+#custom-footer {
+  padding:20px 40px;
+  color:#888; 
+  font-size:14px;
+  background-color:#333434;
+  .logo {
+    max-width:150px;
+    display:inline-block;
+    img {
+      max-width:100%;
+    }
+  }
+  & > div {
+    position:relative;
+    top:2px;
+  }
+  .meta {
+    float:right;
+    a {
+      color:#888;
+    }
+  }
+  .links {
+    float:right;
+    margin-left:30px;
+    a {
+      color:#bbb;
+      display:inline-block;
+      margin-left:20px;
+      &:hover {
+        color:#ddd;
+      }
+      &:first-of-type {
+        margin-left:0px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 880px) {
+    overflow:hidden;
+    & > div {
+      top:0px;
+    }
+    .links {
+      margin-left:0px;
+    }
+    .meta {
+      float:left;
+    }
+    .logo {
+      display:none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    text-align:center;
+    font-size:13px;
+    line-height:20px;
+    .meta, .links {
+      float:none;
+    }
+    .links {
+      margin-bottom:5px;
+    }
+  }
+}
+
+a:hover {
+  text-decoration:none;
+}
