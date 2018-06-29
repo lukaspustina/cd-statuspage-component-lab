@@ -7,17 +7,30 @@
   	<title>StatusPage.io - Overall Page Status</title>
   	
    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://cdn.statuspage.io/se-v2.js'></script>
+	<script src='http://cdn.statuspage.io/se-v2.js'></script>
 
 	<script>
 		var sp = new StatusPage.page({ page: '1f3546fgc1vd'});
 
-			sp.summary({
- 		 success: function(data) {
-   		 	$('.color-description').text(data.status.description);
-  		 	$('.color-dot').addClass(data.status.indicator);
- 		}
-	});
+		sp.summary({
+ 		 	success: function(data) {
+ 	 		 	var indicator = data.status.indicator.toLowerCase();
+ 		 	
+ 			 	if (indicator == "none") {
+ 			 		$('.color-description').text("Alles in Ordnung");
+ 		 		} else if (indicator == "minor") {
+ 		 			$('.color-description').text("minor");
+	 		 	} else if (indicator == "major") {
+ 			 		$('.color-description').text("major");
+ 			 	} else if (indicator == "critical") {
+ 		 			$('.color-description').text("critical");
+	 		 	}  else {
+ 			 		$('.color-description').text("unknown");
+	 		 	}
+ 		 	
+  			 	$('.color-dot').addClass(data.status.indicator);
+ 			}
+		});
 	</script>
 	<style>
 		.color-dot {
