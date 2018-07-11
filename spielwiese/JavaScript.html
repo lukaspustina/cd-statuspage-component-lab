@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script>
+			var schriftgroesse = 12;
+			var bordergroesse = schriftgroesse;
+
+			
+			function schriftgroesse_pruefen(){
+					 if (schriftgroesse >70){
+					 	schriftgroesse= 70;
+					 }
+					 if (schriftgroesse<0){
+					 	schriftgroesse= 1;
+					 }
+					 if (schriftgroesseeingabe==null){
+					 	schriftgroesse=12;
+					 }
+			}
+			
+
+			function update_schriftgroesse_plus() {
+				schriftgroesse=(schriftgroesse + 5);
+				schriftgroesse_pruefen();
+				update_anzeige()
+			}
+			
+			
+			function update_schriftgroesse_minus(){
+				schriftgroesse=(schriftgroesse - 5);
+				schriftgroesse_pruefen();
+				update_anzeige()
+			}
+			
+			
+			function update_schriftgroesse_eingabefeld(){
+				schriftgroesse=document.getElementById('schriftgroesseeingabe').value;
+				schriftgroesse_pruefen();
+				update_anzeige()
+			}
+			
+			
+			function reset_schriftgroesse(wiegross){
+				schriftgroesse=wiegross;
+				update_anzeige();
+			}
+			
+			function update_anzeige(){
+				document.getElementById('schriftanzeige').innerText= 'Die aktuelle Schriftgroesse betraegt ' + schriftgroesse;
+			  	document.getElementById('bsp_Text').style.fontSize=schriftgroesse + 'pt';
+				document.getElementById('schriftgroesseeingabe').value= schriftgroesse;
+				bordergroesse=schriftgroesse/5;
+				document.getElementById('schriftanzeige').style.borderWidth=bordergroesse + 'pt' ;
+				document.getElementById('bsp_Text').style.borderWidth=bordergroesse + 'pt' ;
+				    
+				if (schriftgroesse <=40){
+					var c="color-dot none";
+					document.getElementById('Lampe').className= c;
+				}else if (schriftgroesse<=60){
+					var c="color-dot major";
+					document.getElementById('Lampe').className= c;
+
+				}else  {
+					var c="color-dot critical";
+					document.getElementById('Lampe').className= c;
+				}
+				if (schriftgroesse <=40){
+				 var alle= document.querySelectorAll('.border_anzeige')
+                 var laenge= alle.length;
+				 for(var x=0; x<laenge;x++){
+				 	var eins=alle.item(x);
+				 	eins.className='border_anzeige green';
+				 	
+				 }
+				
+				 }else if (schriftgroesse<=60){
+				 	var alle= document.querySelectorAll('.border_anzeige')
+                 	var laenge= alle.length;
+					for(var x=0; x<laenge;x++){
+				 		var eins=alle.item(x);
+				 		eins.className='border_anzeige orange';
+
+				 	}
+				  
+				   }else {
+				 		var alle= document.querySelectorAll('.border_anzeige')
+                		var laenge= alle.length;
+						for(var x=0; x<laenge;x++){
+				 			var eins=alle.item(x);
+				 			eins.className= 'border_anzeige red';
+				 		}
+				    }
+			}
+				
+		</script>
+		<style>
+			body {
+				text-align: center
+			}	
+			pre {color: #778899;}
+			body {background-color:whitesmoke ;}
+			.red-text {color:brown}
+			.color-dot {
+			  font-size: 12x;
+              border-radius: 150px;
+              display: inline-block;
+			  height:100px;
+              width: 100px;
+              margin-right: 5px;
+              background-color:brown;
+            }
+			.color-dot.none {
+				  background-color: #2ecc71;
+			}
+
+       		.color-dot.critical {
+  				background-color: #e74c3c;
+			}
+			.color-dot.major {
+				background-color: #e67e22;
+			}
+			.border_anzeige {
+				border-style: solid;
+				border-width: 2.4pt;
+				border-color: green;
+			}
+			.border_anzeige.green {
+				border-color: green;
+			}
+			.border_anzeige.orange {
+				border-color: orange
+			}
+			.border_anzeige.red {
+				border-color: red;
+			}
+        </style>
+	</head>
+	<body>
+		<hr>
+		<pre style="font-size:200%;"> Information about JavaScript									<a href= file:///Users/jan/spielwiese/HTML.html>HTML</a>   <a href= file:///Users/jan/spielwiese/JavaScript.html>JavaScript</a>   <a href= file:///Users/jan/spielwiese/ExampleLibrary.html>Home</a></pre>
+		<hr>
+		<div>
+			<span class="color-dot none" id=Lampe></span>
+		</div>
+		<h3>What is JavaScript?!</h3>
+		<p id=bsp_Text class=border_anzeige>
+			*JavaScript to program the behavior of web pages.<br>
+			*Web pages are not the only place where JavaScript is used.<br>
+			*Many desktop and server programs use JavaScript.<br>
+		</p>
+		<p id=schriftanzeige class=border_anzeige>
+		Die aktuelle Schriftgroesse betraegt 12
+		</p>	
+				
+		<button type="button" onclick="update_schriftgroesse_plus()">Schrift wird groesser(+5)</button>
+		 
+		<button type="button" onclick="update_schriftgroesse_minus()"> Schrift wird kleiner(-5)</button>
+		<p></p>
+		
+			<u>Schriftgroesse:</u><br>
+			<input type="text" id="schriftgroesseeingabe" name="schriftgroesseeingabe" value="12">
+			<br>
+			<br>
+			<button type="button" id=anwenden_button onclick="update_schriftgroesse_eingabefeld()">Anwenden</button>
+			<button type="button" onclick="reset_schriftgroesse(12)">Reset</button>
+		
+	<script>
+			var	input = document.getElementById("schriftgroesseeingabe");
+			input.addEventListener("keyup", function(event) {
+				input.value=input.value.replace(/[^\d]+/,'');
+   				event.preventDefault();
+  			 	if (event.keyCode === 13) {
+        			document.getElementById("anwenden_button").click();
+   				}
+			});	
+	</script>
+	</body>
+</html>

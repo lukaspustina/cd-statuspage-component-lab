@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+			var sp = new StatusPage.page({ page: '39qnmk3k9q7f'});
+
+			sp.summary({
+			  success: function(data) {
+		    $('.color-description').text(data.status.description);
+		    $('.color-dot').addClass(data.status.indicator);
+ 		 }
+	});
+	</script>
+	<style>
+		$red:#e74c3c;
+$orange:#e67e22;
+$yellow:#f1c40f;
+$green:#2ecc71;
+
+.color-dot {
+  @include border-radius(99px);
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin-right:5px;
+  &.critical {
+    background-color:$red;
+  }
+  &.major {
+    background-color:$orange;
+  }
+  &.minor {
+    background-color:$yellow;
+  }
+  &.none {
+    background-color:$green;
+  }
+}
+
+body {
+  background-color:#f8f8f8;
+}
+
+.dropdown-menu .divider { margin:6px 0 }
+
+#custom-header {
+  background-color:#fff;
+  padding:24px 40px 23px;
+  position:relative;
+  border-bottom:1px solid #e0e0e0;
+  .logo-container {
+    float:left;
+    max-width:325px;
+    img {
+		max-width:100%;
+    }
+  }
+  nav {
+    float:right;
+    & > a {
+      margin-right: 30px;
+    }
+    & > a, .show-dropdown {
+      color: #FFF;
+      display:inline-block;
+      font-weight: 500;
+      color: #AFAFAF;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .dropdown {
+      display:inline-block;
+    }
+  }
+  .dropdown-menu {
+    right: 0px;
+    left:auto;
+  }
+
+  @media screen and (min-width: 900px) {
+    nav {
+      position:relative;
+      top:8px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    text-align:center;
+    padding-left:5%;
+    padding-right:5%;
+    padding-bottom:18px;
+    .logo-container {
+      float:none;
+      display:block;
+      margin-bottom:18px;
+      max-width:none;
+      .logo {
+        max-width:325px;
+        display:inline-block;
+      }
+    }  
+    nav {
+      float:none;
+    }
+    nav > a, .updates-dropdown-container {
+      float:none;
+    }
+  }
+
+  @media screen and (max-width: 475px) {
+    nav {
+      & > a {
+        margin-right:20px; 
+      }
+      & > a, .show-updates-dropdown {
+        font-size:13px;
+      }        
+    }
+    .logo-container .logo {
+      max-width:70%; 
+    }
+    nav > a:nth-child(1):before {
+      content:none;
+    }
+  }
+}
+
+.page-content {
+  text-align:center;
+  font-size:30px;
+  color:#d7d7d7;
+  font-weight:500;
+  letter-spacing:2px;
+}
+
+
+#custom-footer {
+  padding:20px 40px;
+  color:#888; 
+  font-size:14px;
+  background-color:#333434;
+  .logo {
+    max-width:150px;
+    display:inline-block;
+    img {
+      max-width:100%;
+    }
+  }
+  & > div {
+    position:relative;
+    top:2px;
+  }
+  .meta {
+    float:right;
+    a {
+      color:#888;
+    }
+  }
+  .links {
+    float:right;
+    margin-left:30px;
+    a {
+      color:#bbb;
+      display:inline-block;
+      margin-left:20px;
+      &:hover {
+        color:#ddd;
+      }
+      &:first-of-type {
+        margin-left:0px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 880px) {
+    overflow:hidden;
+    & > div {
+      top:0px;
+    }
+    .links {
+      margin-left:0px;
+    }
+    .meta {
+      float:left;
+    }
+    .logo {
+      display:none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    text-align:center;
+    font-size:13px;
+    line-height:20px;
+    .meta, .links {
+      float:none;
+    }
+    .links {
+      margin-bottom:5px;
+    }
+  }
+}
+
+a:hover {
+  text-decoration:none;
+}
+	</style>
+	<title>Status Page for your company</title>
+<header id="custom-header">
+  <div class="logo-container">
+    <a href="https://www.google.com" target="_blank" class="logo">
+      <img src="https://s3.amazonaws.com/f.cl.ly/items/0a32453Q1V1j3n1j0E2c/acmelogo.png?v=097c22e4" alt="Acme API Co. Logo">
+    </a>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Features</a>
+    <a href="#">Pricing</a>
+    <div class="dropdown">
+      <a href="#" data-toggle="dropdown" class="show-dropdown">Click Me</a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="#">Link 1</a>
+        </li>
+        <li>
+          <a href="#">Link 2</a>
+        </li>
+        <li>
+          <a href="#">Link 3</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <!-- status information inserted here -->
+          <a href="http://acmeapico.statuspage.io" target="_blank">
+            <span class="color-dot"></span>
+            <span class="color-description"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+  
+<div class="page-content">
+  PAGE CONTENT HERE
+</div>
+  
+ <footer id="custom-footer">
+  <a class="logo" href="http://www.google.c" target="_blank">
+    <img src="https://s3.amazonaws.com/f.cl.ly/items/0a32453Q1V1j3n1j0E2c/acmelogo.png?v=097c22e4" alt="Acme API Co. Logo">
+  </a>
+  <div class="links">
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Contact</a>
+    <a href="#">Support</a>
+  </div>
+  <div class="meta">
+    <!-- the colored dot gets an extra class and description text gets inserted via javascript -->
+    <a href="http://acmeapico.statuspage.io" target="_blank">
+      <span class="color-dot"></span>
+      <span class="color-description"></span>
+    </a>
+  </div>
+</footer>
+</html>

@@ -1,0 +1,36 @@
+1. Datei hochgeladen
+2. Datei auf dem PC gelöscht
+--> Datei auf dem Handy sichtbar | Pc nicht sichtbar
+3. Mehrmals aktualisiert (Handy-Version)
+--> Immer noch sichtbar
+4. Datei angeklickt
+--> Fehlerinfo: Datei nicht verfügbar
+5. Datei wird nicht mehr angezeigt
+
+
+
+
+Android-Version
+-nur eine Einstellung (Benachrichtigungen)
+-keine Gruppenanzeige/funktion (Im Menü)
+
+
+
+
+
+
+
+-viele Dateien ausgewählt=nur wenige werden angezeigt
+-mehrere Dateien im Link 
+-Wie man den Link weiter gibt (als XING Statusmeldung), teilweise abgeschnitten 
+-Sprache Deutsch, externer Link= Sprache Englisch
+-man muss nur 1mal das Passwort angeben
+-->Bei jedem Zugriff
+-falsches Passwort: unendliche Versuche
+-->nach 10mal falsch eingegeben gesperrt
+-unterschiedliche Bilder von Ordner(Bedeutung?)
+-Datei in anderen Order geschoben (Alter Standort gelöscht)
+-Datei auf Sammlung ziehen
+--->Sammlung öffnet sich
+--->Ordner der Sammlung werden angezeigt
+-Wenn Maus über Dateien geht, rechts 3 Punkte untereinander=rechtsclick
