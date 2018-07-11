@@ -1,0 +1,6 @@
+-Einstellungen werden nur teilweise angewendet
+-Limit erreicht, Link-Ersteller bekommt Hinweis
+-Löschfunktion für E-Mail/Anhang (rechtsclick)
+-Falsches Passwort(10x), Link-Ersteller bekommt Hinweis
+-Abbrechen-Button für "Upload-Link | Upload-Email"
+-Mehrere Sammlungen verfügbar für E-Mail Upload

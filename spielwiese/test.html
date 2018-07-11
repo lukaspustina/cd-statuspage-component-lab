@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sinn des Lebens zum Quadrat</title>
+<script language="JavaScript">
+  var SinnDesLebens = 1000;
+   
+  function SchreibeQuadrate()
+  {
+      var i, x;
+      var Satzteil = "Das Quadrat von ";
+      document.close();
+      document.open("text/html");
+      for(i=1; i <= SinnDesLebens; ++i)
+        {
+          x = i * i;
+          document.write(Satzteil + i + " ist " + x + "<br>");
+        }
+  }
+</script>
+</head>
+<body onLoad="SchreibeQuadrate()">
+</body>
+</html>
